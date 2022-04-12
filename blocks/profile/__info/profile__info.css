@@ -1,6 +1,19 @@
 .profile__info {
   display: flex;
   flex-wrap: wrap;
-  max-width: 50%;
+  max-width: 60%;
   align-items: center;
+}
+
+@media all and (max-width: 767px) {
+  .profile__info {
+    max-width: 65%;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .profile__info {
+    max-width: 100%;
+  }
 }

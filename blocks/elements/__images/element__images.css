@@ -1,0 +1,6 @@
+.element__images {
+  width: 100%;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+  max-height: 282px;
+}

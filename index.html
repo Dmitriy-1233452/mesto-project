@@ -1,31 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />
-    <title>Mesto</title>
-  </head>
-  <body class="body">
-    <header class="header">
-      <div class="header__logo"></div>
-      <hr class="header__border" />
-    </header>
-    <main class="content">
-      <div class="container">
-        <section class="profile">
-          <div class="profile__heading">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/index.css" />
+  <title>Mesto</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="header__logo"></div>
+    <hr class="header__border" />
+  </header>
+  <main class="content">
+    <div class="container">
+      <section class="profile">
+        <div class="profile__heading">
           <div class="profile__avatar"></div>
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <div class="profile__button_edit"></div>
+            <button class="button__edit" type="button">
+            </button>
             <p class="profile__description">Исследователь океана</p>
-            </div>
-            </div>
-          <div class="profile__button_add"></div>
           </div>
-        </section>
-    </main>
-  </body>
+        </div>
+        <button class="button__add" type="button"></button>
+      </section>
+      <section class="elements">
+        <article class="element__cards">
+          <div class="element__card">
+            <img class="element__images" src="./images/karachaevsk.jpg" alt="Карачаевск">
+            <div class="element__description">
+              <h2 class="element__title">Карачаевск</h2>
+              <button class="button__like" type="button"></button>
+            </div>
+          </div>
+          <div class="element__card">
+            <img class="element__images" src="./images/elbrus.jpg" alt="Гора эльбрус">
+            <div class="element__description">
+              <h2 class="element__title">Гора Эльбрус</h2>
+              <button class="button__like" type="button"></button>
+            </div>
+          </div>
+          <div class="element__card">
+            <img class="element__images" src="./images/dombay.jpg" alt="Домбай">
+            <div class="element__description">
+              <h2 class="element__title">Домбай</h2>
+              <button class="button__like" type="button"></button>
+            </div>
+          </div>
+          <div class="element__card">
+            <img class="element__images" src="./images/elbrus.jpg" alt="Гора эльбрус">
+            <div class="element__description">
+              <h2 class="element__title">Гора Эльбрус</h2>
+              <button class="button__like" type="button"></button>
+            </div>
+          </div>
+          <div class="element__card">
+            <img class="element__images" src="./images/dombay.jpg" alt="Домбай">
+            <div class="element__description">
+              <h2 class="element__title">Домбай</h2>
+              <button class="button__like" type="button"></button>
+            </div>
+          </div>
+          <div class="element__card">
+            <img class="element__images" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">
+            <div class="element__description">
+              <h2 class="element__title">Карачаево-Черкессия</h2>
+              <button class="button__like" type="button"></button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+  <div class="container">
+    <footer class="footer">
+      <p class="footer__copyright">© 2020 Mesto Russia</p>
+    </footer>
+  </div>
+  <div class="popup popup_opened">
+    <div class="popup__container">
+      <h2 class="popup__heading">Редактировать профиль</h2>
+      <form action="#" class="popup__form">
+        <input class="popup__form_item" type="text" name="firstname" value="Жак-Ив Кусто">
+        <input class="popup__form_item" type="text" name="description" value="Исследователь океана">
+        <button class="button__form"></button>
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>

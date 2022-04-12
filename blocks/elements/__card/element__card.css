@@ -1,0 +1,36 @@
+.element__card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  max-width: 32%;
+  margin-bottom: 20px;
+  margin-right: 17px;
+  max-height: 362px;
+}
+
+.element__card:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .element__card {
+    margin-right: 10px;
+  }
+}
+
+
+@media all and (max-width: 767px) {
+  .element__card {
+    max-width: 40%;
+    margin-right: 10px;
+  }
+
+  .element__card:nth-of-type(3n) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .element__card {
+    max-width: 100%;
+  }
+}

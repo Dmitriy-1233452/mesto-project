@@ -9,3 +9,13 @@
   margin-bottom: 16px;
   color: #FFFFFF;
 }
+
+@media all and (max-width: 1279px) {
+  .profile__name {
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 14px;
+  }
+}

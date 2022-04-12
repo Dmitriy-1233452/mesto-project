@@ -1,4 +1,13 @@
 .profile__heading {
   display: flex;
   flex-direction: row;
+  max-width: 90%;
+}
+
+@media all and (max-width: 767px) {
+  .profile__heading {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
 }
