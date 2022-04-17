@@ -1,0 +1,19 @@
+.elements__cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+
+@media all and (max-width: 767px) {
+  .elements__cards {
+    justify-content: center;
+    max-width: 100%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .elements__cards {
+    flex-direction: column;
+  }
+}

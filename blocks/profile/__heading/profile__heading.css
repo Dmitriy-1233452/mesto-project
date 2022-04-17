@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   max-width: 90%;
+  align-items: center;
 }
 
 @media all and (max-width: 767px) {

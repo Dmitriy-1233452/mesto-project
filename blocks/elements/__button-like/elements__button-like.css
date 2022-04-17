@@ -1,0 +1,9 @@
+.elements__button-like {
+  background-image: url(../../../images/button__like.svg);
+  width: 22px;
+  height: 19px;
+}
+
+.elements__button-like:hover {
+  opacity: 0.5;
+}
