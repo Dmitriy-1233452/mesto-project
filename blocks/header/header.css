@@ -1,6 +1,6 @@
 .header {
   margin: 45px auto 40px;
-  max-width: 68.75vw;
+  max-width: 880px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
@@ -8,5 +8,11 @@
   .header {
     max-width: 100%;
     margin: 28px auto 42px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .header {
+    max-width: 320px;
   }
 }
