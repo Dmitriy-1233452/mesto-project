@@ -1,0 +1,13 @@
+.profile__button-edit {
+  background-image: url(../../../images/button__edit.svg);
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+
+@media all and (max-width: 767px) {
+  .profile__button-edit {
+    width: 18px;
+    height: 18px;
+  }
+}

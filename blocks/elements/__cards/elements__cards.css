@@ -16,5 +16,6 @@
 @media all and (max-width: 600px) {
   .elements__cards {
     flex-direction: column;
+    align-items: stretch;
   }
 }
