@@ -19,5 +19,12 @@
     text-align: center;
     margin-right: 10px;
     margin-bottom: 14px;
+    max-width: 88%;
+  }
+}
+
+@media all and (max-width: 310px) {
+  .profile__name {
+    max-width: 80%;
   }
 }
