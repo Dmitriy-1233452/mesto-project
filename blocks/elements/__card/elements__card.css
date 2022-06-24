@@ -1,8 +1,12 @@
 .elements__card {
   background: #FFFFFF;
   border-radius: 10px;
-  max-width: 32%;
   margin-right: 17px;
+  max-width: 282px;
+  width: 100vw;
+  max-height: 362px;
+  height: 100vh;
+  position: relative;
 }
 
 .elements__card:nth-of-type(3n) {
@@ -11,6 +15,13 @@
 
 .elements__card:nth-of-type(n+4) {
   margin-top: 20px;
+}
+
+
+@media screen and (max-width: 881px) {
+  .elements__card {
+    max-width: 32%;
+  }
 }
 
 @media screen and (max-width: 1279px) {

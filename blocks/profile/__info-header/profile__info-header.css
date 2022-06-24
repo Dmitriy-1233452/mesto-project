@@ -1,4 +1,5 @@
 .profile__info-header {
   display: flex;
   flex-wrap: nowrap;
+  max-width: 100%;
 }

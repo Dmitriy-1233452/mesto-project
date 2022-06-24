@@ -3,6 +3,12 @@
   margin: 0 auto;
 }
 
+@media all and (max-width: 881px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
 @media all and (max-width: 767px) {
   .container {
     max-width: 88.1%;

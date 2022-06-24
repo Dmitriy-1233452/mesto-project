@@ -1,7 +1,7 @@
 .profile__heading {
   display: flex;
   flex-direction: row;
-  max-width: 90%;
+  max-width: 80%;
   align-items: center;
 }
 
