@@ -6,3 +6,8 @@
   max-height: 282px;
   object-fit: cover;
 }
+
+
+.elements__images:hover {
+  cursor: pointer;
+}
