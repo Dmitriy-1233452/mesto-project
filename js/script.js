@@ -14,21 +14,13 @@ const formAddElement = popupAdd.querySelector('.popup-add__form');
 const addClose = popupAdd.querySelector('.popup-add__button-close');
 const cardsUsers = document.querySelector('.elements__cards');
 const buttonAddCard = popupAdd.querySelector('.popup-add__form-button');
-const imagesPopup = document.querySelector('.popup-images');
 
 
 
 
 
 
-buttonAddCard.addEventListener('click', function () {
-  const link = document.querySelector('.popup__form-item_link');
-  const name = document.querySelector('.popup__form-item_title');
 
-  addCard(containerCard, createCard(link.value, name.value));
-  link.value = '';
-  name.value = '';
-});
 
 
 // Сброс события по умолчанию
@@ -36,6 +28,17 @@ buttonAddCard.addEventListener('click', function () {
 
 function formSubmitAdd(evt) {
   evt.preventDefault();
+
+
+    const link = document.querySelector('.popup__form-item_link');
+    const name = document.querySelector('.popup__form-item_title');
+
+    addCard(containerCard, createCard(link.value, name.value));
+
+    closePopup(popupAdd)
+    link.value = '';
+    name.value = '';
+ 
 }
 formAddElement.addEventListener('submit', formSubmitAdd);
 
@@ -43,6 +46,8 @@ function submitProfileForm(evt) {
   evt.preventDefault();
   nameProfile.textContent = inputName.value;
   jobProfile.textContent = inputJob.value;
+
+  closePopup(popupEdit);
 
 }
 formProfileElement.addEventListener('submit', submitProfileForm);
@@ -69,23 +74,16 @@ function closePopup(popupElement) {
 addClose.addEventListener('click', function () {
   closePopup(popupAdd);
 });
-buttonAddCard.addEventListener('click', function () {
-  closePopup(popupAdd)
-});
+
 editClose.addEventListener('click', function () {
-  closePopup(popupEdit);
-});
-editSave.addEventListener('click', function () {
   closePopup(popupEdit);
 });
 
 
 // Открытие модальных окон
 
-function openPopup(popupElement) {
-  
+function openPopup(popupElement) { 
   popupElement.classList.add('popup_opened');
-  
 }
 
 
@@ -97,4 +95,8 @@ profileButton.addEventListener('click', function () {
 
 addButton.addEventListener('click', function () {
   openPopup(popupAdd);
+  const link = document.querySelector('.popup__form-item_link');
+  const name = document.querySelector('.popup__form-item_title');
+  link.value = '';
+  name.value = '';
 });
