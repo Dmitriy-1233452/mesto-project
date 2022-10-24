@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesto</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="header__logo"></div>
+  </header>
+  <main class="content">
+    <div class="container">
+      <section class="profile">
+        <div class="profile__heading">
+          <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Фото профиля">
+          <div class="profile__info">
+            <div class="profile__info-header">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__button-edit buttons" type="button">
+              </button>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
+          </div>
+        </div>
+        <button class="profile__button-add buttons" type="button"></button>
+      </section>
+      <section class="elements">
+        <article class="elements__cards">
+        </article>
+      </section>
+    </div>
+  </main>
+  <div class="container">
+    <footer class="footer">
+      <p class="footer__copyright">© 2020 Mesto Russia</p>
+    </footer>
+  </div>
+  <div class="popup popup-add">
+    <div class="popup__container popup-add__container">
+      <button class="popup__button-close popup-add__button-close buttons" type="button"></button>
+      <div class="popup__content popup-add__content">
+        <h2 class="popup-add__heading popup__heading">Новое место</h2>
+        <form action="#" class="popup__form popup-add__form form" name="formAdd" novalidate>
+          <label class="popup__form-field">
+          <input id="place-input" class="popup__form-item popup__form-item_title form__input" type="text" name="placeName" placeholder="Название" 
+          minlength="2" 
+          maxlength="30" 
+          required
+          pattern="^[A-Za-zА-Яа-яЁё\s\-]+$"
+          data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
+          <span class="popup__form-error place-input-error"></span>
+          </label>
+          <label class="popup__form-field">
+          <input id="link-input" class="popup__form-item popup__form-item_link form__input" type="url" name="placeLink"
+            placeholder="Ссылка на картинку" required>
+            <span class="popup__form-error link-input-error"></span>
+            </label>
+          <button class="popup__form-button popup-add__form-button buttons buttons_disabled disabled" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-edit">
+    <div class="popup__container popup-edit__container">
+      <button class="popup__button-close buttons" type="button"></button>
+      <div class="popup__content">
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <form action="#" class="popup__form popup-edit__form form" name="formEdit" novalidate>
+          <label class="popup__form-field">
+          <input id="name-input" class="popup__form-item popup__form-item_firstname form__input" type="text" name="firstName" placeholder="Имя" 
+          minlength="2" 
+          maxlength="40" 
+          required 
+          pattern="^[A-Za-zА-Яа-яЁё\s\-]+$"
+          data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
+          <span class="popup__form-error name-input-error"></span>
+        </label>
+        <label class="popup__form-field">
+          <input id="description-input" class="popup__form-item popup__form-item_job form__input" type="text" name="description"
+            placeholder="Вид деятельности" 
+            minlength="2" 
+            maxlength="200" 
+            required
+            pattern="^[A-Za-zА-Яа-яЁё\s\-]+$"
+            data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
+            <span class="popup__form-error description-input-error"></span>
+            </label>
+          <button class="popup__form-button popup-edit__form-button buttons buttons_disabled" type="submit" disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-images">
+    <div class="popup__container popup-images__container">
+      <button class="popup__button-close buttons popup-images__button" type="button"></button>
+      <div class="popup__content popup-images__content">
+        <img class="popup-images__image" src="" alt="">
+        </div>
+        <p class="popup-images__title"></p>
+      </div>  
+  </div>
+  <template class="elements-template">
+    <div class="elements__card">
+      <img class="elements__images" src="" alt="">
+      <button class="elements__button-delete buttons" type="button">
+        <img class="elements__delete-icon" src="<%=require('./images/button__delete.svg')%>" alt="Иконка корзины">
+      </button>
+      <div class="elements__description">
+        <h2 class="elements__title"></h2>
+        <button class="elements__button-like buttons" type="button"></button>
+      </div>
+    </div>
+  </template>
+</body>
+
+</html>

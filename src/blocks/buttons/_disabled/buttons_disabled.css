@@ -1,0 +1,9 @@
+.buttons_disabled {
+    opacity: 0.2;
+    cursor: default;
+    
+}
+
+.buttons_disabled:hover {
+    opacity: 0.2;
+}
