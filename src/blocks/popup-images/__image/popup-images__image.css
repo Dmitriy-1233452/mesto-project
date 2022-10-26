@@ -1,6 +1,6 @@
 .popup-images__image {
-  /* margin-top: 8px;
-  margin-bottom: 10px; */
-  max-width: 100%;
+  max-width: 75vw;
   max-height: 75vh;
+  margin: 0 auto;
+  object-fit: contain;
 }

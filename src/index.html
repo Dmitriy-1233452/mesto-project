@@ -40,7 +40,7 @@
     </footer>
   </div>
   <div class="popup popup-add">
-    <div class="popup__container popup-add__container">
+    <div class="popup__container popup__container-form popup-add__container">
       <button class="popup__button-close popup-add__button-close buttons" type="button"></button>
       <div class="popup__content popup-add__content">
         <h2 class="popup-add__heading popup__heading">Новое место</h2>
@@ -52,12 +52,12 @@
           required
           pattern="^[A-Za-zА-Яа-яЁё\s\-]+$"
           data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
-          <span class="popup__form-error place-input-error"></span>
+          <span class="popup__form-error place-input-error">Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы</span>
           </label>
           <label class="popup__form-field">
           <input id="link-input" class="popup__form-item popup__form-item_link form__input" type="url" name="placeLink"
             placeholder="Ссылка на картинку" required>
-            <span class="popup__form-error link-input-error"></span>
+            <span class="popup__form-error link-input-error">Вы пропустили это поле</span>
             </label>
           <button class="popup__form-button popup-add__form-button buttons buttons_disabled disabled" type="submit">Создать</button>
         </form>
@@ -65,7 +65,7 @@
     </div>
   </div>
   <div class="popup popup-edit">
-    <div class="popup__container popup-edit__container">
+    <div class="popup__container popup__container-form popup-edit__container">
       <button class="popup__button-close buttons" type="button"></button>
       <div class="popup__content">
         <h2 class="popup__heading">Редактировать профиль</h2>
@@ -77,7 +77,7 @@
           required 
           pattern="^[A-Za-zА-Яа-яЁё\s\-]+$"
           data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
-          <span class="popup__form-error name-input-error"></span>
+          <span class="popup__form-error name-input-error">Вы пропустили это поле</span>
         </label>
         <label class="popup__form-field">
           <input id="description-input" class="popup__form-item popup__form-item_job form__input" type="text" name="description"
@@ -87,7 +87,7 @@
             required
             pattern="^[A-Za-zА-Яа-яЁё\s\-]+$"
             data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
-            <span class="popup__form-error description-input-error"></span>
+            <span class="popup__form-error description-input-error">Вы пропустили это поле</span>
             </label>
           <button class="popup__form-button popup-edit__form-button buttons buttons_disabled" type="submit" disabled>Сохранить</button>
         </form>
