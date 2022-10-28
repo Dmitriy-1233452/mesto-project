@@ -1,6 +1,6 @@
 import "../style/index.css";
 import { initialCards} from "./cards";
-import { enableValidation } from "./validate";
+import { enableValidation, configValidate } from "./validate";
 import { setSubmitButtonState } from "./utils";
 import { closePopup, openPopup } from "./modal";
 import { createCard, addCard } from "./card";

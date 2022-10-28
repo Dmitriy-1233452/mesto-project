@@ -33,17 +33,17 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     if (!inputElement.validity.valid) {
       showInputError(formElement, inputElement, inputElement.validationMessage);
     } else {
-      hideInputError(formElement, inputElement);
+      hideInputError(formElement, inputElement, configValidate);
     }
   };
   
-  const setEventListeners = (formElement) => {
+  const setEventListeners = (formElement, configValidate) => {
     const inputList = Array.from(formElement.querySelectorAll(configValidate.inputForm));
     const buttonElement = formElement.querySelector(configValidate.buttonSubmit);
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', function () {
-        checkInputValidity(formElement, inputElement);
-        toggleButtonState(inputList, buttonElement);
+        checkInputValidity(formElement, inputElement, configValidate);
+        toggleButtonState(inputList, buttonElement, configValidate);
       });
     });
   };
@@ -51,12 +51,12 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   const enableValidation = () => {
     const formList = Array.from(document.querySelectorAll(configValidate.documentForm));
     formList.forEach((formElement) => {
-    setEventListeners(formElement);
+    setEventListeners(formElement, configValidate);
       });
       
     }
 
-  enableValidation();
+  enableValidation(configValidate);
 
   const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
@@ -64,7 +64,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     });
   };
 
- const toggleButtonState = (inputList, buttonElement) => {
+ const toggleButtonState = (inputList, buttonElement, configValidate) => {
     if (hasInvalidInput(inputList)) {
       buttonElement.disabled = true;
       buttonElement.classList.add(configValidate.buttonDisabled);
@@ -74,4 +74,4 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     }
   };
 
-export { enableValidation };
+export { enableValidation, configValidate };

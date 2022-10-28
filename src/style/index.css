@@ -36,11 +36,13 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container-form/popup__container-form.css);
 @import url(../blocks/popup-images/popup-images.css);
+@import url(../blocks/popup-images/__wrapper/popup-images__wrapper.css);
 @import url(../blocks/popup-images/__container/popup-images__container.css);
 @import url(../blocks/popup-images/__content/popup-images__content.css);
 @import url(../blocks/popup-images/__image/popup-images__image.css);
 @import url(../blocks/popup-images/__title/popup-images__title.css);
 @import url(../blocks/popup-images/_opened/popup-images_opened.css);
+@import url(../blocks/popup-images/__button/popup-images__button.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__form/_error/popup__form-error.css);
 @import url(../blocks/popup/__form-field/popup__form-field.css);

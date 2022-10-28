@@ -1,0 +1,14 @@
+.popup-images__button {
+    align-self: flex-start;
+    margin-top: -40px;
+    margin-left: 10px;
+}
+
+@media all and (max-width: 760px) {
+    .popup-images__button {
+        margin-left: 5px;
+        margin-top: -25px;
+        width: 20px;
+        height: 20px;
+    }
+}

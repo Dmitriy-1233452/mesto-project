@@ -1,7 +1,6 @@
 import { closePopup, openPopup } from "./modal";
 
 const elementsTemplate = document.querySelector('.elements-template').content;
-const popupImage = document.querySelector('.popup-images');
 const imagesPopup = document.querySelector('.popup-images');
 const imagesPopupName = imagesPopup.querySelector('.popup-images__title');
 const imagesPopupLink = imagesPopup.querySelector('.popup-images__image');
@@ -29,7 +28,7 @@ function createCard (link, name) {
       imagesPopupName.textContent = name;
       imagesPopupLink.src = link;
       imagesPopupLink.alt = name;
-      openPopup(popupImage);
+      openPopup(imagesPopup);
     });
   
   return cardElement;
