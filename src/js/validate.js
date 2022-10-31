@@ -4,34 +4,35 @@ const configValidate = {
   inputForm: ".form__input",
   documentForm: ".form",
   buttonSubmit: ".popup__form-button",
-  buttonDisabled: "buttons_disabled"
+  buttonDisabled: "buttons_disabled",
 };
 
 //Валидация Форм
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+
+const showInputError = (formElement, inputElement, errorMessage, configValidate) => {
+  
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+
     inputElement.classList.add(configValidate.inputError);
+    
     errorElement.textContent = errorMessage;
     errorElement.classList.add(configValidate.inputErrorMessage);
+    
   };
   
-  const hideInputError = (formElement, inputElement) => {
+  const hideInputError = (formElement, inputElement, configValidate) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(configValidate.inputError);
     errorElement.classList.remove(configValidate.inputErrorMessage);
     errorElement.textContent = '';
   };
   
-  const checkInputValidity = (formElement, inputElement) => {
-    if (inputElement.validity.patternMismatch) {
-      inputElement.setCustomValidity(inputElement.dataset.errorMessage);
-    } else {
-      inputElement.setCustomValidity("");
-    }
-
+  const checkInputValidity = (formElement, inputElement, configValidate) => {
     if (!inputElement.validity.valid) {
-      showInputError(formElement, inputElement, inputElement.validationMessage);
+      // debugger;
+      showInputError(formElement, inputElement, inputElement.validationMessage, configValidate);
+      inputElement.setCustomValidity(inputElement.dataset.errorMessage);
     } else {
       hideInputError(formElement, inputElement, configValidate);
     }
@@ -48,7 +49,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     });
   };
   
-  const enableValidation = () => {
+  const enableValidation = (configValidate) => {
     const formList = Array.from(document.querySelectorAll(configValidate.documentForm));
     formList.forEach((formElement) => {
     setEventListeners(formElement, configValidate);
