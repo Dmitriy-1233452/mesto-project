@@ -1,10 +1,11 @@
 import "../style/index.css";
-import { initialCards} from "./cards";
-import { enableValidation, configValidate } from "./validate";
+import { enableValidation, configValidate, showInputError } from "./validate";
 import { setSubmitButtonState } from "./utils";
 import { closePopup, openPopup } from "./modal";
 import { createCard, addCard } from "./card";
+import { profileInformation, cardGet, profileEditServer, cardAddServer, cardDeleteServer } from "./api";
 
+const containerCard = document.querySelector('.elements__cards');
 const profile = document.querySelector('.profile');
 const profileButton = profile.querySelector('.profile__button-edit');
 const buttonAdd = profile.querySelector('.profile__button-add');
@@ -17,7 +18,6 @@ const popupAdd = document.querySelector('.popup-add');
 const addClose = popupAdd.querySelector('.popup-add__button-close');
 const link = document.querySelector('.popup__form-item_link');
 const name = document.querySelector('.popup__form-item_title');
-const containerCard = document.querySelector('.elements__cards');
 const popupImage = document.querySelector('.popup-images');
 const imageClose = document.querySelector('.popup-images__button');
 const placeAddButton = popupAdd.querySelector('.popup-add__form-button');
@@ -26,26 +26,51 @@ const formEdit = document.forms.formEdit;
 const firstName = formEdit.querySelector('.popup__form-item_firstname');
 const professionName = formEdit.querySelector('.popup__form-item_job');
 
+// Загрузка инфо профиля
+
+profileInformation(nameProfile, jobProfile)
+.then((res) => {
+  nameProfile.textContent = res.name;
+  jobProfile.textContent = res.about;
+})
+.catch((err) => {
+  console.error(err);
+})
 
 
+// Отрисовка карточек
+
+cardGet()
+.then((res) => {
+  res.reverse().forEach(function(card) {
+    addCard(containerCard, createCard(card.link, card.name, card.likes, card._id))
+  });
+})
+.catch((err) => {
+  console.error(err);
+})
+
+// Удаление карточки
 
 
 
 // Сброс события по умолчанию
-
+  
 formAdd.addEventListener('submit', function(evt) {
   evt.preventDefault();
+  cardAddServer(name.value, link.value);
   addCard(containerCard, createCard(link.value, name.value)); 
   closePopup(popupAdd)
-  
 })
 
 formEdit.addEventListener('submit', function(evt) {
   evt.preventDefault();
+  profileEditServer(firstName.value, professionName.value);
   nameProfile.textContent = firstName.value;
   jobProfile.textContent = professionName.value;
   closePopup(popupEdit);
 })
+
 
 // Закрытие модальных окон
 
@@ -63,7 +88,7 @@ imageClose.addEventListener('click', function () {
 
 // Открытие модальных окон
 
-profileButton.addEventListener('click', function () {
+profileButton.addEventListener('click', function () { 
   firstName.value = nameProfile.textContent;
   professionName.value = jobProfile.textContent;
   openPopup(popupEdit);
@@ -71,13 +96,16 @@ profileButton.addEventListener('click', function () {
 });
 
 buttonAdd.addEventListener('click', function () {
-openPopup(popupAdd);
- formAdd.reset();
- setSubmitButtonState(false, placeAddButton);
- 
+  name.value = '';
+  link.value = '';
+  openPopup(popupAdd);
+  setSubmitButtonState(false, placeAddButton);
 });
 
-initialCards.forEach(function(card) {
-  addCard(containerCard, createCard(card.link, card.name))
-});
+enableValidation(configValidate);
+
+
+
+
+
 

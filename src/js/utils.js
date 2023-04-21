@@ -7,5 +7,5 @@ function setSubmitButtonState(isFormValid, validButton) {
       validButton.classList.add('buttons_disabled'); 
     }
   }
-
+  
   export { setSubmitButtonState };

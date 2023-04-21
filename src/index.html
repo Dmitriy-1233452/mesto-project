@@ -19,11 +19,11 @@
           <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Фото профиля">
           <div class="profile__info">
             <div class="profile__info-header">
-              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <h1 class="profile__name"></h1>
               <button class="profile__button-edit buttons" type="button">
               </button>
             </div>
-            <p class="profile__description">Исследователь океана</p>
+            <p class="profile__description"></p>
           </div>
         </div>
         <button class="profile__button-add buttons" type="button"></button>
@@ -113,7 +113,10 @@
       </button>
       <div class="elements__description">
         <h2 class="elements__title"></h2>
+        <div class="elements__like-wrapper">
         <button class="elements__button-like buttons" type="button"></button>
+        <h3 class="elements__like-counter"></h3>
+        </div>
       </div>
     </div>
   </template>

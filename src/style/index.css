@@ -48,4 +48,7 @@
 @import url(../blocks/popup/__form-field/popup__form-field.css);
 @import url(../blocks/buttons/_disabled/buttons_disabled.css);
 @import url(../blocks/popup/__form-item/_active/.popup__form-item_active.css);
+@import url(../blocks/elements/__like-wrapper/elements__like-wrapper.css);
+@import url(../blocks/elements/__like-counter/elements__like-counter.css);
+
 

@@ -1,6 +1,5 @@
 function closePopup(popupElement) {
     popupElement.classList.remove('popup_opened'); 
-
     popupElement.removeEventListener('click', overleyClose);
     document.removeEventListener('keydown', closeByEsc)
 }

@@ -11,32 +11,36 @@ const configValidate = {
 
 
 const showInputError = (formElement, inputElement, errorMessage, configValidate) => {
-  
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-
     inputElement.classList.add(configValidate.inputError);
-    
     errorElement.textContent = errorMessage;
     errorElement.classList.add(configValidate.inputErrorMessage);
-    
   };
   
-  const hideInputError = (formElement, inputElement, configValidate) => {
+const hideInputError = (formElement, inputElement, configValidate) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+    
     inputElement.classList.remove(configValidate.inputError);
-    errorElement.classList.remove(configValidate.inputErrorMessage);
     errorElement.textContent = '';
+    errorElement.classList.remove(configValidate.inputErrorMessage);
+    
   };
   
   const checkInputValidity = (formElement, inputElement, configValidate) => {
     if (!inputElement.validity.valid) {
-      // debugger;
       showInputError(formElement, inputElement, inputElement.validationMessage, configValidate);
-      inputElement.setCustomValidity(inputElement.dataset.errorMessage);
     } else {
       hideInputError(formElement, inputElement, configValidate);
     }
+
+    if (inputElement.validity.patternMismatch) {
+      showInputError(formElement, inputElement, inputElement.validationMessage, configValidate);
+      inputElement.setCustomValidity(inputElement.dataset.errorMessage);
+    } else {
+      inputElement.setCustomValidity('');
+    }
   };
+
   
   const setEventListeners = (formElement, configValidate) => {
     const inputList = Array.from(formElement.querySelectorAll(configValidate.inputForm));
@@ -56,8 +60,6 @@ const showInputError = (formElement, inputElement, errorMessage, configValidate)
       });
       
     }
-
-  enableValidation(configValidate);
 
   const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
